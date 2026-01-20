@@ -1,0 +1,21 @@
+package Main;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Class {
+	private List<Person> people;
+	
+	public Class() {
+		this.people = new ArrayList<Person>();
+	}
+	
+	public void addPerson(Person person) throws NullPointerException {
+		
+		if (person == null) {
+			throw new NullPointerException("Person is unknown (null)");
+		}
+		
+		this.people.add(person);
+	}
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post - BlogHub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>BlogHub</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="create-post.html">Create Post</a>
+                <a href="profile.html">My Profile</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="create-post-container">
+            <h2>Create New Post</h2>
+            <form id="createPostForm">
+                <input type="text" name="title" placeholder="Post Title" required>
+                <textarea name="content" placeholder="Write your post content here..." rows="15" required></textarea>
+                <button type="submit">Publish Post</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/post.js"></script>
+</body>
+</html>

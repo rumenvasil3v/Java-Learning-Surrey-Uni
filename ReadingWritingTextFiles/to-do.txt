@@ -1,0 +1,2 @@
+I am writing to that file using BufferedWriter class.
+That is some random line. Ignore it!

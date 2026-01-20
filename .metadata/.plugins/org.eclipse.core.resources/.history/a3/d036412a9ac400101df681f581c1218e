@@ -1,0 +1,12 @@
+package Main;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Class {
+	private List<Person> people;
+	
+	public Class() {
+		this.people = new ArrayList<Person>();
+	}
+}

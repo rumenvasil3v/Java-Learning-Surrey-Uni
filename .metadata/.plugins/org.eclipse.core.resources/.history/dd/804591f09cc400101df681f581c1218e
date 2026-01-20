@@ -1,0 +1,15 @@
+package Main;
+
+public class Canine extends Dog {
+	private double strengthOfBark;
+	
+	public Canine(double howHungry, double howTired, double strengthOfBark) {
+		super(howHungry, howTired);
+		
+		if (strengthOfBark > 100) {
+			throw new StrengthOfBackException("Bark is too loud!");
+		}
+		
+		this.strengthOfBark = strengthOfBark;
+	}
+}

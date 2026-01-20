@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post - BlogHub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>BlogHub</h1>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html">Home</a>
+                <a href="create-post.html" id="createPostLink" style="display:none;">Create Post</a>
+                <a href="profile.html" id="profileLink" style="display:none;">My Profile</a>
+                <a href="#" id="loginBtn">Login</a>
+                <a href="#" id="logoutBtn" style="display:none;">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="post-detail" id="postDetail">
+            <!-- Post content will be loaded here -->
+        </div>
+
+        <div class="comments-section">
+            <h3>Comments</h3>
+            <div id="commentForm" style="display:none;">
+                <form id="addCommentForm">
+                    <textarea name="content" placeholder="Add a comment..." rows="3" required></textarea>
+                    <button type="submit">Post Comment</button>
+                </form>
+            </div>
+            <div id="commentsList">
+                <!-- Comments will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/post-detail.js"></script>
+</body>
+</html>

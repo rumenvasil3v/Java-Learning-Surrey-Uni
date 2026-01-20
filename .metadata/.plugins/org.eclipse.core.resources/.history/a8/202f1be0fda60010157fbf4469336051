@@ -1,0 +1,96 @@
+package main;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
+import javax.swing.JPanel;
+
+// Acts as game screen
+public class GamePanel extends JPanel implements Runnable {
+	// Screen Settings
+	private static final int ORIGINAL_TILE_SIZE = 16; // 16 x 16 tile
+	private static final int SCALE = 3;
+	
+	private static final int tileSize = ORIGINAL_TILE_SIZE * SCALE; // 48 x 48 pixels
+	private static final int maxScreenCol = 16;
+	private static final int maxScreenRow = 12;
+	private static final int screenWidth = tileSize * maxScreenCol; // 768 pixels
+	private static final int screenHeight = tileSize * maxScreenRow; // 576 pixels
+	
+	// FPS
+	int FPS = 60;
+	
+	KeyHandler keyH = new KeyHandler();
+	Thread gameThread;
+	
+	// Set player's default position
+	int playerX = 100;
+	int playerY = 100;
+	int playerSpeed = 4;
+	
+	public GamePanel() {
+		this.setPreferredSize(new Dimension(screenWidth, screenHeight));
+		this.setBackground(Color.black);
+		this.setDoubleBuffered(true); // this can improve game's rendering performance
+		this.addKeyListener(keyH);
+		this.setFocusable(true);
+	}
+	
+	public void startGameThread() {
+		gameThread = new Thread(this);
+		gameThread.start();
+	}
+
+	@Override
+	public void run() {
+		// Two popular game loops
+		// Established methods
+		
+		double drawInterval = 1000000000 / FPS; // 0.01666 seconds
+		double nextDrawTime = System.nanoTime() + drawInterval;
+		
+		while(gameThread != null) {
+			// 1 UPDATE: update information such as character position
+			update();
+			// 2 DRAW: draw the screen with the updated information
+			repaint();
+			
+			double remainingTime = nextDrawTime - System.nanoTime();
+			
+			Thread.sleep(remainingTime);
+		}
+	}
+	
+	public void update() {
+		if (keyH.upPressed == true) {
+			playerY -= playerSpeed;
+		}
+		
+		if (keyH.downPressed == true) {
+			playerY += playerSpeed;
+		}
+		
+		if (keyH.leftPressed == true) {
+			playerX -= playerSpeed;
+		}
+		
+		if (keyH.rightPressed == true) {
+			playerX += playerSpeed;
+		}
+	}
+	
+	public void paintComponent(Graphics g) {
+		
+		super.paintComponent(g);
+		
+		Graphics2D g2 = (Graphics2D)g;
+		
+		g2.setColor(Color.white);
+		
+		g2.fillRect(playerX, playerY, tileSize, tileSize);
+		
+		g2.dispose(); // Good practice to save some memories, release any resources it uses
+	}
+}

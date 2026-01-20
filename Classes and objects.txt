@@ -1,0 +1,16 @@
+Classes and objects
+
+-classes are templates for the objects
+-objects are the specific instance of that particular class
+-each object has a state and that state is defined by its attributes
+-the behaviour of each objects are its methods and with them we can manipulate the state of
+the object
+
+-each class has attributes (fields as variables) which describe the characteristics of each object - these fields describe the object
+
+-each class has a behaviour which is defined my class methods
+
+Encapsulation
+- wrapping the code and data (methods and data) into a single unit called class
+- the class is responsible for managing its own fields, data and  variables
+- that's why we make them private so nobody can change them, so we can manage them

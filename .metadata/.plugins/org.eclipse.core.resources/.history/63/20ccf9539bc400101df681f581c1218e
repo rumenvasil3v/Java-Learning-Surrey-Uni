@@ -1,0 +1,11 @@
+package Main;
+
+public class Canine extends Dog {
+	
+	private double strengthOfBack;
+	
+	
+	public Canine(double howHungry, double howTired, double strengthOfBack) {
+		this.howHungry = howHungry;
+	}
+}

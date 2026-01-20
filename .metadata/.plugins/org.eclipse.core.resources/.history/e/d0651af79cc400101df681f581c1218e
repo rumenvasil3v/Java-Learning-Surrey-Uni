@@ -1,0 +1,8 @@
+package Main;
+
+public class StrengthOfBackException extends Exception {
+	
+	public StrengthOfBackException(String message) {
+		super(message);
+	}
+}

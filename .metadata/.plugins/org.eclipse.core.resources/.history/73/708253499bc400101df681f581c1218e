@@ -1,0 +1,11 @@
+package Main;
+
+public class Canine {
+	private double howHungry;
+	private double strengthOfBack;
+	private double howTired;
+	
+	public Canine(double howHungry, double howTired, double strengthOfBack) {
+		
+	}
+}

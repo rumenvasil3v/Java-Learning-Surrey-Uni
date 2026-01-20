@@ -1,0 +1,8 @@
+package Main;
+
+public class NoPersonDefinedException extends RuntimeException {
+		
+	public NoPersonDefinedException() {
+		super("No person defined");
+	}
+}
